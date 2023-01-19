@@ -28,7 +28,6 @@ static void put(Rep r, End e, Data d) {
     newN -> data = d;
     End tail = Ends;
 
-
 }
 static Data ith(Rep r, End e, int i)  {
     return 0;
