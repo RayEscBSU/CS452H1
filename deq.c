@@ -24,9 +24,15 @@ static Rep rep(Deq q) {
 }
 
 static void put(Rep r, End e, Data d) {
-    struct Node* newN = (struct Node*) malloc(sizeof (struct Node));
+    struct Node *newN = (struct Node*) malloc(sizeof (struct Node));
     newN -> data = d;
-    End tail = Ends;
+    newN -> np[1] = Tail;
+
+    if ( r->len == 0){  // if list is empty
+        newN -> np[1] = NULL;
+        r->ht[1] = newN;
+        return;
+    }
 
 }
 static Data ith(Rep r, End e, int i)  {
