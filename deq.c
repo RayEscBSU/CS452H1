@@ -28,19 +28,23 @@ static void put(Rep r, End e, Data d) {
     newN -> data = d;
 
     if ( r->len == 0){  // if list is empty
-        r->ht[Head] = 0; //set new node to h and t
-        r->ht[Tail] = 0;
+        r->ht[Head] = newN; //set new node to h and t
+        r->ht[Tail] = newN;
         newN -> np[1] = NULL;
         newN -> np[0] = NULL;
+        r->len = +1;
     }
+    else{
+        //     list is not empty
+        struct Node *temp= r->ht[Tail];
 
-//     list is not empty
-//    r->ht[]->np[0] = newN;
-//    newN -> np[1] = r->ht[1];
-//    newN -> np[1] = NULL;
-//    e = 1; //?????
+        temp->np[0] = newN;
 
-    r->len = +1;
+        newN -> np[1] = temp;
+        newN -> np[0] = NULL;
+
+        r->len = +1;
+    }
     return ;
 }
 
