@@ -30,8 +30,8 @@ static void put(Rep r, End e, Data d) {
     if ( r->len == 1){  // if list is empty
         newN -> np[1] = NULL;
         newN -> np[0] = NULL;
-        r->ht[0] = newN; //set new node to h and t
-        r->ht[1] = newN;
+        r->ht[Head] = newN; //set new node to h and t
+        r->ht[Tail] = newN;
         return;
     }
 
