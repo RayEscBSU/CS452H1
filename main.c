@@ -13,8 +13,8 @@ int main() {
   char *test2 = "testing que 2";
   deq_head_put(q, test2);
 
-    char *test3 = "testing que 3";
-    deq_head_put(q, test3);
+  char *test3 = "testing que 3";
+  deq_head_put(q, test3);
 
   char *s=deq_str(q,0);
   printf("%s\n",s);
