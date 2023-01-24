@@ -26,6 +26,13 @@ static Rep rep(Deq q) {
 static void put(Rep r, End e, Data d) {
     struct Node *newN = (struct Node*) malloc(sizeof (struct Node) + sizeof(d));
     newN -> data = d;
+    int h = Head; 
+    int t = Tail; 
+
+    if(e == Tail){
+      h  = Tail; 
+      t = Head; 
+    }
 
     if ( r->len == 0){  // if list is empty
       r->ht[Head] = newN; //set new node to h and t
@@ -37,13 +44,14 @@ static void put(Rep r, End e, Data d) {
     //     list is not empty
       struct Node *temp= r->ht[Tail];
 
-      temp->np[Tail] = newN;
+      temp->np[t] = newN;
 
-      newN -> np[Head] = temp;
-      newN -> np[Tail] = NULL;
-      r->ht[Tail] = newN;  
+      newN -> np[h] = temp;
+      newN -> np[t] = NULL;
+      
+      r->ht[t] = newN;  
     }
-    
+
     r->len = +1;
 
     return ;
