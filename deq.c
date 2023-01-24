@@ -27,20 +27,21 @@ static void put(Rep r, End e, Data d) {
     struct Node *newN = (struct Node*) malloc(sizeof (struct Node));
     newN -> data = d;
 
-    if ( r->len == 1){  // if list is empty
-        r->ht[Head] = newN; //set new node to h and t
-        r->ht[Tail] = newN;
+    if ( r->len == 0){  // if list is empty
+        r->ht[Head] = 0; //set new node to h and t
+        r->ht[Tail] = 0;
         newN -> np[1] = NULL;
         newN -> np[0] = NULL;
-        return;
     }
 
-    // list is not empty
-    r->ht[1]->np[0] = newN;
-    newN -> np[1] = r->ht[1];
-    newN -> np[1] = NULL;
-    e = 1; //?????
+//     list is not empty
+//    r->ht[]->np[0] = newN;
+//    newN -> np[1] = r->ht[1];
+//    newN -> np[1] = NULL;
+//    e = 1; //?????
 
+    r->len = +1;
+    return ;
 }
 
 static Data ith(Rep r, End e, int i)  {
