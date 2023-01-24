@@ -24,7 +24,7 @@ static Rep rep(Deq q) {
 }
 
 static void put(Rep r, End e, Data d) {
-    struct Node *newN = (struct Node*) malloc(sizeof (struct Node));
+    struct Node *newN = (struct Node*) malloc(sizeof (struct Node) + sizeof(d));
     newN -> data = d;
 
     if ( r->len == 0){  // if list is empty
@@ -45,6 +45,7 @@ static void put(Rep r, End e, Data d) {
 
         r->len = +1;
     }
+
     return ;
 }
 
