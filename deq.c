@@ -42,13 +42,13 @@ static void put(Rep r, End e, Data d) {
     }
     else{
     //     list is not empty
-      struct Node *temp= r->ht[Tail];
+      struct Node *temp= r->ht[t];
 
       temp->np[t] = newN;
 
       newN -> np[h] = temp;
       newN -> np[t] = NULL;
-      
+
       r->ht[t] = newN;  
     }
 
