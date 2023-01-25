@@ -59,6 +59,7 @@ static void put(Rep r, End e, Data d) {
 }
 
 static Data ith(Rep r, End e, int i)  {
+
     return 0;
 }
 
@@ -93,6 +94,14 @@ static Data get(Rep r, End e)         {
 
 }
 static Data rem(Rep r, End e, Data d) {
+  struct Node *temp = r->ht[Head]; 
+  while(r->len != 0 && temp->np[Tail]!= NULL){
+    if(temp->data == d){
+      return temp->data; 
+    }
+    temp = temp->np[Tail];
+  }
+    r->len --; 
     return 0;
 }
 
