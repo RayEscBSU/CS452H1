@@ -27,7 +27,10 @@ int main() {
   //testing get H 
   printf("*****GET H *****\n");
   // deq_head_get(q); 
-  deq_tail_get(q);
+  //deq_tail_get(q);
+
+  printf("*****REM H *****\n");
+  deq_head_rem(q,test2); 
 
   s=deq_str(q,0);
   printf("%s\n",s);

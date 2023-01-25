@@ -59,7 +59,14 @@ static void put(Rep r, End e, Data d) {
 }
 
 static Data ith(Rep r, End e, int i)  {
-
+  // struct Node *temp = r->ht[Head]; 
+  // while(r->len != 0 && temp->np[Tail]!= NULL){
+  //   if(temp->data == d){
+  //     return temp->data; 
+  //   }
+  //   temp = temp->np[Tail];
+  // }
+  //   r->len --; 
     return 0;
 }
 
@@ -93,17 +100,36 @@ static Data get(Rep r, End e)         {
   return nT->data;
 
 }
+
+
 static Data rem(Rep r, End e, Data d) {
-  struct Node *temp = r->ht[Head]; 
-  while(r->len != 0 && temp->np[Tail]!= NULL){
-    if(temp->data == d){
-      return temp->data; 
+  struct Node *curr = r->ht[Head]; 
+  struct Node *tempH = curr->np[Head]; //store values of head and node from curr
+  struct Node *tempT = curr->np[Tail]; 
+
+
+  while(r->len != 0 && curr->np[Tail]!= NULL){
+    if(curr->data == d){
+      tempH->np[Tail] = NULL; 
+      tempT->np[Head] = NULL;
+      
+      tempH->np[Tail] = tempT; 
+      tempT->np[Head] = tempH; 
+
+      curr->np[Head] = NULL; 
+      curr->np[Tail] = NULL; 
+
+      free(curr); 
+      r->len --; 
+      return curr->data; 
     }
-    temp = temp->np[Tail];
+    curr = curr->np[Tail];
   }
-    r->len --; 
+    
     return 0;
 }
+
+
 
 extern Deq deq_new() {
   Rep r=(Rep)malloc(sizeof(*r));
