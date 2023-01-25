@@ -26,7 +26,8 @@ int main() {
 
   //testing get H 
   printf("*****GET H *****\n");
-  deq_head_get(q); 
+  // deq_head_get(q); 
+  deq_tail_get(q);
 
   s=deq_str(q,0);
   printf("%s\n",s);

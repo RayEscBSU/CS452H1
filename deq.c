@@ -62,15 +62,22 @@ static Data ith(Rep r, End e, int i)  {
     return 0;
 }
 static Data get(Rep r, End e)         {
-  struct Node *t = r->ht[Tail]; 
-  struct Node *nT = t->np[Head]; 
+  int h = Head; 
+  int t = Tail; 
+  if(e == Tail){ //put starting at tail, revers H and T values
+    h  = Tail; 
+    t = Head; 
+  }
+  
+  struct Node *oT= r->ht[t]; 
+  struct Node *nT = oT->np[h]; 
 
-  t->np[Head] = NULL; 
-  nT->np[Tail] = NULL; 
+  oT->np[h] = NULL; 
+  nT->np[t] = NULL; 
 
-  r->ht[Tail] = nT; 
+  r->ht[t] = nT; 
   r-> len--; 
-  free(t); 
+  free(oT); 
   return nT->data;
 
 }
