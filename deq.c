@@ -25,8 +25,9 @@ static Rep rep(Deq q) {
 
 /**
  * Put - adds a node to the end of the list
- * When called from head nodes is added left to right
- * when called from tail nodes are added right to left
+ * H n n n T 
+ * head_put - nodes is added on the left end 
+ * tail_put - nodes are added on the right end
 */
 static void put(Rep r, End e, Data d) {
     struct Node *newN = (struct Node*) malloc(sizeof (struct Node) + sizeof(d));
@@ -61,9 +62,10 @@ static void put(Rep r, End e, Data d) {
 
 /**
  * ith - returns data at a specified index depnding on direction
- * When called from head nodes at the far right is returned
- * when called from tail node at the far left is returned 
- * Reutrns node data 
+ *  H n n n T 
+ * head_ith - retuns the node on the left end 
+ * tail_ith - returns the added on the right end
+ * Reutrns - node data 
 */
 static Data ith(Rep r, End e, int i)  {
   if (i < 0 || i > r->len){
@@ -104,10 +106,11 @@ static Data ith(Rep r, End e, int i)  {
 }
 
 /**
- * Get - Returns node data at the end of the list depnding on direction
- * When called from head nodes at the far right is returned
- * when called from tail node at the far left is returned 
- * Reutrns node data 
+ * Get - Returns the data from the last node
+ * * H n n n T 
+ * deq_head_get - node on the left end is returned 
+ * deq_tail_get - node on the right end is returned 
+ * Reutrns - node data 
 */
 static Data get(Rep r, End e)         {
   if (r->len == 0 ){
@@ -136,8 +139,8 @@ static Data get(Rep r, End e)         {
 }
 
 /**
- * Rem - retuns data that matches specified data and removes node 
- * Returns - mathcing data from list
+ * Rem - removes the node with matching data then removes node 
+ * Returns - mathcing data 
  * 
 */
 static Data rem(Rep r, End e, Data d) {
