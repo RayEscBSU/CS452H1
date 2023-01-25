@@ -96,20 +96,33 @@ static Data get(Rep r, End e)         {
 
   r->ht[t] = nT; 
   r-> len--; 
+  Data ret = oT->data; 
   free(oT); 
-  return nT->data;
+  return ret;
 
 }
 
 
 static Data rem(Rep r, End e, Data d) {
   struct Node *curr = r->ht[Head]; 
-  struct Node *tempH = curr->np[Head]; //store values of head and node from curr
-  struct Node *tempT = curr->np[Tail]; 
+  struct Node *tempH; //store values of head and node from curr
+  struct Node *tempT; 
 
 
-  while(r->len != 0 && curr->np[Tail]!= NULL){
+  while(curr){
     if(curr->data == d){
+      //rem begining 
+      if(curr == r->ht[Head]){
+        return get(r,Head); 
+      }
+      else if(curr == r->ht[Tail]){ // rem from end 
+        return get(r,Tail);
+      }
+      else {
+      //rem middle 
+      tempH = curr->np[Head];
+      tempT = curr->np[Tail];
+
       tempH->np[Tail] = NULL; 
       tempT->np[Head] = NULL;
       
@@ -119,14 +132,22 @@ static Data rem(Rep r, End e, Data d) {
       curr->np[Head] = NULL; 
       curr->np[Tail] = NULL; 
 
-      free(curr); 
-      r->len --; 
-      return curr->data; 
+      r->len --;
+      Data ret = curr->data; 
+      free(curr);  
+      return ret; 
+      }
     }
-    curr = curr->np[Tail];
+    else
+    {
+      printf("next node\n");
+      curr = curr->np[Tail];
+    }
   }
+
+  printf("*****Node Does Not Exist*****\n");
+  return NULL; 
     
-    return 0;
 }
 
 

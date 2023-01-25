@@ -23,18 +23,22 @@ int main() {
 
   char *s=deq_str(q,0);
   printf("%s\n",s);
+  free(s);
 
   //testing get H 
-  printf("*****GET H *****\n");
+  //printf("*****GET H *****\n");
   // deq_head_get(q); 
   //deq_tail_get(q);
 
-  printf("*****REM H *****\n");
-  deq_head_rem(q,test2); 
+  // s=deq_str(q,0);
+  // printf("%s\n",s);
+  // free(s);
 
-  s=deq_str(q,0);
+  printf("*****REM H *****\n");
+  
+  //s = deq_head_rem(q,"4"); 
+   s = deq_tail_rem(q,test); 
   printf("%s\n",s);
-  free(s);
 
   deq_del(q,0);
   return 0;
