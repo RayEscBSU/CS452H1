@@ -105,12 +105,15 @@ static Data get(Rep r, End e)         {
 
 }
 
-
+/**
+ * Rem - retuns data that matches specified data and removes node 
+ * Returns - mathcing data from list
+ * 
+*/
 static Data rem(Rep r, End e, Data d) {
   struct Node *curr = r->ht[Head]; 
   struct Node *tempH; //store values of head and node from curr
   struct Node *tempT; 
-
 
   while(curr){
     if(curr->data == d){
@@ -142,8 +145,7 @@ static Data rem(Rep r, End e, Data d) {
       }
     }
     else
-    {
-      printf("next node\n");
+    { //contine to next node 
       curr = curr->np[Tail];
     }
   }
