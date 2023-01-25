@@ -7,9 +7,9 @@ int main() {
   Deq q=deq_new();
 
   
-  char *test = "test 1";
-  char *test2 = "test 2";
-  char *test3 = "test 3";
+  char *test = "test1";
+  char *test2 = "test2";
+  char *test3 = "test3";
 
   //testing put from head
   printf("*****PUT H *****\n");
@@ -27,18 +27,18 @@ int main() {
 
   //testing get H 
   //printf("*****GET H *****\n");
-  // deq_head_get(q); 
-  //deq_tail_get(q);
+ //s = deq_head_get(q); 
+ // s = deq_tail_get(q);
 
   // s=deq_str(q,0);
-  // printf("%s\n",s);
-  // free(s);
+  //printf("%s\n",s);
+ // free(s);
 
-  printf("*****REM H *****\n");
+   printf("*****REM H *****\n");
   
-  //s = deq_head_rem(q,"4"); 
-   s = deq_tail_rem(q,test); 
-  printf("%s\n",s);
+  //s = deq_head_rem(q,"test2"); 
+  //  s = deq_tail_rem(q,test); 
+  // printf("%s\n",s);
 
   deq_del(q,0);
   return 0;
