@@ -58,6 +58,13 @@ static void put(Rep r, End e, Data d) {
     return ;
 }
 
+
+/**
+ * ith - returns data at a specified index depnding on direction
+ * When called from head nodes at the far right is returned
+ * when called from tail node at the far left is returned 
+ * Reutrns node data 
+*/
 static Data ith(Rep r, End e, int i)  {
   int c =0; 
 
@@ -83,7 +90,7 @@ static Data ith(Rep r, End e, int i)  {
     {
       c--; 
     }
-    
+
   }
 
   printf("*****Node Does Not Exist*****\n");
