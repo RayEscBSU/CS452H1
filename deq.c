@@ -61,7 +61,18 @@ static void put(Rep r, End e, Data d) {
 static Data ith(Rep r, End e, int i)  {
     return 0;
 }
+
+/**
+ * Get - Returns node data at the end of the list depnding on direction
+ * When called from head nodes at the far right is returned
+ * when called from tail node at the far left is returned 
+ * Reutrns node data 
+*/
 static Data get(Rep r, End e)         {
+  if (r->len == 0 ){
+    printf("*****Empy list*****\n");
+    return 0; 
+  }
   int h = Head; 
   int t = Tail; 
   if(e == Tail){ //put starting at tail, revers H and T values
