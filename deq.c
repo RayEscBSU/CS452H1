@@ -83,6 +83,7 @@ static Data ith(Rep r, End e, int i)  {
     {
       c--; 
     }
+    
   }
 
   printf("*****Node Does Not Exist*****\n");
