@@ -59,15 +59,18 @@ static void put(Rep r, End e, Data d) {
 }
 
 static Data ith(Rep r, End e, int i)  {
-  // struct Node *temp = r->ht[Head]; 
-  // while(r->len != 0 && temp->np[Tail]!= NULL){
-  //   if(temp->data == d){
-  //     return temp->data; 
-  //   }
-  //   temp = temp->np[Tail];
-  // }
-  //   r->len --; 
-    return 0;
+  struct Node *temp = r->ht[Head]; 
+  int c =0; 
+  while(temp){
+    if(c == i ){
+      return temp->data; 
+    }
+    temp = temp->np[Tail];
+    c++; 
+  }
+
+  printf("*****Node Does Not Exist*****\n");
+  return NULL; 
 }
 
 /**
@@ -81,11 +84,11 @@ static Data get(Rep r, End e)         {
     printf("*****Empy list*****\n");
     return 0; 
   }
-  int h = Head; 
-  int t = Tail; 
+  int h = Tail; 
+  int t = Head; 
   if(e == Tail){ //put starting at tail, revers H and T values
-    h  = Tail; 
-    t = Head; 
+    h  = Head; 
+    t = Tail; 
   }
   
   struct Node *oT= r->ht[t]; 
@@ -113,7 +116,7 @@ static Data rem(Rep r, End e, Data d) {
     if(curr->data == d){
       //rem begining 
       if(curr == r->ht[Head]){
-        return get(r,Head); 
+        return get(r, Head); 
       }
       else if(curr == r->ht[Tail]){ // rem from end 
         return get(r,Tail);
