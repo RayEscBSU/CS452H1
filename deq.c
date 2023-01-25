@@ -23,13 +23,18 @@ static Rep rep(Deq q) {
   return (Rep)q;
 }
 
+/**
+ * Put - adds a node to the end of the list
+ * When called from head nodes is added left to right
+ * when called from tail nodes are added right to left
+*/
 static void put(Rep r, End e, Data d) {
     struct Node *newN = (struct Node*) malloc(sizeof (struct Node) + sizeof(d));
     newN -> data = d;
     int h = Head; 
     int t = Tail; 
 
-    if(e == Tail){
+    if(e == Tail){ //put starting at tail, revers H and T values
       h  = Tail; 
       t = Head; 
     }
@@ -43,17 +48,13 @@ static void put(Rep r, End e, Data d) {
     else{
     //     list is not empty
       struct Node *temp= r->ht[t];
-
       temp->np[t] = newN;
-
       newN -> np[h] = temp;
       newN -> np[t] = NULL;
-
       r->ht[t] = newN;  
     }
 
     r->len = +1;
-
     return ;
 }
 
@@ -61,7 +62,17 @@ static Data ith(Rep r, End e, int i)  {
     return 0;
 }
 static Data get(Rep r, End e)         {
-    return 0;
+  struct Node *t = r->ht[Tail]; 
+  struct Node *nT = t->np[Head]; 
+
+  t->np[Head] = NULL; 
+  nT->np[Tail] = NULL; 
+
+  r->ht[Tail] = nT; 
+  r-> len--; 
+  free(t); 
+  return nT->data;
+
 }
 static Data rem(Rep r, End e, Data d) {
     return 0;
