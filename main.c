@@ -27,7 +27,7 @@ int main() {
 
   //printf("*****iTH H *****\n");
  // s =deq_head_ith(q,2); 
-  s =deq_tail_ith(q,0); 
+  s =deq_tail_ith(q,4); 
 
   printf("%s\n",s);
   

@@ -66,6 +66,12 @@ static void put(Rep r, End e, Data d) {
  * Reutrns node data 
 */
 static Data ith(Rep r, End e, int i)  {
+  if (i < 0 || i > r->len){
+    printf("Index out of bounds\n");
+    printf("Integer value given is not a valid index\n");
+    return NULL; 
+  }
+
   int c =0; 
 
   int h = Head; 
