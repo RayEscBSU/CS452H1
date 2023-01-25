@@ -26,7 +26,9 @@ int main() {
   free(s);
 
   //printf("*****iTH H *****\n");
-  s =deq_head_ith(q,1); 
+ // s =deq_head_ith(q,2); 
+  s =deq_tail_ith(q,0); 
+
   printf("%s\n",s);
   
   //printf("*****GET H *****\n");

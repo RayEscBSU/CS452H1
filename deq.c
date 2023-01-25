@@ -59,14 +59,30 @@ static void put(Rep r, End e, Data d) {
 }
 
 static Data ith(Rep r, End e, int i)  {
-  struct Node *temp = r->ht[Head]; 
   int c =0; 
+
+  int h = Head; 
+  int t = Tail; 
+  if(e == Tail){ //put starting at tail, revers H and T values
+    h  = Tail; 
+    t = Head; 
+    c = r->len +1; 
+  }
+
+  struct Node *temp = r->ht[h]; 
+  
   while(temp){
     if(c == i ){
       return temp->data; 
     }
-    temp = temp->np[Tail];
-    c++; 
+    temp = temp->np[t];
+    if (h == Head){
+      c++; 
+    }
+    else if (h == Tail)
+    {
+      c--; 
+    }
   }
 
   printf("*****Node Does Not Exist*****\n");
