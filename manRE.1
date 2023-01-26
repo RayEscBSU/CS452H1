@@ -2,7 +2,26 @@
                                                                                             
 teting - test are built in to main.c
 
-test_script - user interface to perform some task
+       Test for put and get. Checks functionality of deq_head_put/ deq_tail_put and deq_head_get/ deq_tail_get functionality
+       run_put_get
+       Deq - q
+       ht - 0 = deq_head_put, 1 = deq_tail_put
+       r - 0 = deq_head_get, 1 = deq_tail_gset
+
+       Test for REM. Checks functionality of deq_tail_rem and deq_head_rem
+       run_rem
+       Deq - q
+       ht - 0 = deq_head_put, 1 = deq_tail_put
+       r - 0 = deq_head_rem, 1 = deq_tail_rem
+
+       Test for ith, Checks functionality of deq_head_ith and deq_tail_ith
+       run_ith
+       Deq - q
+       ht - 0 = deq_head_put, 1 = deq_tail_put
+       r - 0 = deq_head_ith, 1 = deq_tail_ith
+       index - specified index to removes
+
+ How to perform test - user runs test to be performed in main.c. 
 
 SYNOPSIS
        test_script {OBJECT} [OPTIONS]
