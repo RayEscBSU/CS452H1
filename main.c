@@ -4,43 +4,53 @@
 #include "deq.h"
 
 
-// static void run_ith(Deq q){
-//   char *t1 = "test1 ";
-//   char *t2 = "test2 ";
-//   char *t3 = "test3 "; 
-//   char *t4 = "test4 ";
-//   char *t5 = "test5 ";
-//   char *t6 = "test6 ";
-//   char *t7 = "test7 "; 
+static void run_ith(Deq q,int ht, int index){
+  char *t1 = "test1 ";
+  char *t2 = "test2 ";
+  char *t3 = "test3 "; 
+  char *t4 = "test4 ";
+  char *t5 = "test5 ";
+  char *t6 = "test6 ";
+  char *t7 = "test7 "; 
+  
+  if (ht == 0){
+  printf("*****PUT H *****\n");
+  
+  deq_head_put(q, t1);
+  deq_head_put(q, t2);
+  deq_head_put(q, t3);
+  deq_head_put(q, t4);
+  deq_head_put(q, t5);
+  deq_head_put(q, t6);
+  deq_head_put(q, t7);
 
-//   printf("*****PUT H *****\n");
-//   // deq_head_put(q, t1);
-//   // deq_head_put(q, t2);
-//   // deq_head_put(q, t3);
-//   // deq_head_put(q, t4);
-//   // deq_head_put(q, t5);
-//   // deq_head_put(q, t6);
-//   // deq_head_put(q, t7);
+  }
+  else if(ht == 1 ){
+  printf("*****PUT T *****\n");
+  
+  deq_tail_put(q,t1); 
+  deq_tail_put(q,t2);
+  deq_tail_put(q,t3);
+  deq_tail_put(q,t4); 
+  deq_tail_put(q,t5);
+  deq_tail_put(q,t6);
+  deq_tail_put(q,t7);
 
-//   //Testing put from tail
-//   deq_tail_put(q,t1); 
-//   deq_tail_put(q,t2);
-//   deq_tail_put(q,t3);
-//   deq_tail_put(q,t4); 
-//   deq_tail_put(q,t5);
-//   deq_tail_put(q,t6);
-//  deq_tail_put(q,t7);
+  }
 
-//   char *s=deq_str(q,0);
-//   printf("%s\n",s);
-//   free(s);
 
-//   //s =deq_head_ith(q,2); 
-//   //s =deq_tail_ith(q,1); 
+  
 
-//   printf("%s\n",s);
+  char *s=deq_str(q,0);
+  printf("%s\n",s);
+  free(s);
+
+  s =deq_head_ith(q,index); 
+  //s =deq_tail_ith(q,1); 
+
+  printf("%s\n",s);
  
-// }
+}
 
 
 // //static void run_test(Deq q, int ht){
@@ -128,32 +138,37 @@ int main() {
   Deq q=deq_new();
 
  // run_test(q,5);
- // run_ith(q);
+  run_ith(q, 7);
 
- char *test = "test1";
-  char *test2 = "test2";
-  char *test3 = "test3";
-  char *test4 = "test4";
+//  char *test = "test1";
+//   char *test2 = "test2";
+//   char *test3 = "test3";
+//   char *test4 = "test4";
 
  
-  printf("*****PUT H *****\n");
-  deq_head_put(q, test);
-  deq_head_put(q, test2);
-  deq_head_put(q, test3);
-  deq_head_put(q, test4);
-  //Testing put from tail
-  // deq_tail_put(q,test); 
-  // deq_tail_put(q,test2);
-  // deq_tail_put(q,test3);
+//   printf("*****PUT H *****\n");
+//   deq_head_put(q, test);
+//   deq_head_put(q, test2);
+//   deq_head_put(q, test3);
+//   deq_head_put(q, test4);
+//   //Testing put from tail
+//   // deq_tail_put(q,test); 
+//   // deq_tail_put(q,test2);
+//   // deq_tail_put(q,test3);
+//   // deq_tail_put(q,test4);
 
-  char *s=deq_str(q,0);
-  printf("%s\n",s);
-  free(s);
+//   char *s=deq_str(q,0);
+//   printf("%s\n",s);
+//   free(s);
 
-  //s =deq_head_ith(q,0);  //works
- // s =deq_tail_ith(q,0); 
+//   // 0 1 2 3
+//   //s =deq_head_ith(q,0);  //works.
+//  // s =deq_head_ith(q,0);
 
-  printf("%s\n",s);
+//   // 3 2 1 0 
+//   s =deq_tail_ith(q,0); 
+
+//   printf("%s\n",s);
 
 
   deq_del(q,0);

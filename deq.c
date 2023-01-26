@@ -81,7 +81,6 @@ static Data ith(Rep r, End e, int i)  {
   if(e == Tail){ //put starting at tail, revers H and T values
     h  = Tail; 
     t = Head; 
-    c = r->len; 
   }
 
   struct Node *temp = r->ht[h]; 
@@ -90,15 +89,10 @@ static Data ith(Rep r, End e, int i)  {
     if(c == i ){
       return temp->data; 
     }
-    temp = temp->np[t];
-    if (h == Head){
-      c++; 
-    }
-    else if (h == Tail)
-    {
-      c--; 
-    }
 
+    temp = temp->np[t];
+    c++;
+    
   }
 
   printf("*****Node Does Not Exist*****\n");
