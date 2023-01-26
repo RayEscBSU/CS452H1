@@ -26,8 +26,12 @@ Teting - test are built in to main.c
 Run 
        GNUmakefile must be in the parent directory 
        To run: 
-              from directory where main.c is located    - make
+              From directory where main.c is located    - make
                                                         -./deq
+
+       To run valgrind: 
+       From directory where main.c is located    - make valgrind
+                                                 
 
 
        
@@ -35,7 +39,7 @@ Run
 DESCRIPTION
        Our assingment was to implement a double ended doubly linked list. Doulbe ended means the list can have
        the head or tail at iether end of the list. Double linked means each node has a pointer for its head and
-       tail nodes. Valgrind was used to manage memory. 
+       tail nodes. Valgrind was used to manage memory. Below are the functions implemented: 
 
               - Put - adds a node to the end of the list
               - ith - returns data at a specified index depnding on direction
@@ -84,13 +88,6 @@ OBJECT
 
               Multiple values can be added within inverted commas separated by comma for different teams
 
-OPTIONS
-       --arg4 <arg4_value>
-              Put description for argument 4 value. The is optional argument.
-
-       -h|--help
-              Prints help
-
 FILES
        GNUmakefile
        CS452H1
@@ -101,15 +98,16 @@ FILES
               error.h
               manRE.1s
 
-
 EXAMPLES
-       test_script --arg1 my_arg1 --arg4 'team1_value1,team2_value1'
+       deq_head_get
+       deq_head_ith
+       deq_head_put - deq_head_put(q,"char_test")
+       deq_head_rem
 
-              Run test_script with my_arg1 value for team1 value
-
-       test_script --arg2 my_arg2 --arg4 'team2_value1,team2_value2'
-
-              Run test_script with my_arg2 value for team2 value
+       deq_tail_get
+       deq_tail_ith
+       deq_tail_put - deq_tail_put(q,"char_test")
+       deq_tail_rem
 
 
 CREDITS
