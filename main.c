@@ -90,6 +90,8 @@ static void run_rem (Deq q,int ht, int r){
     printf("An invalid option was entered for r \n");
     return ; 
   }
+  printf("*****Test complete*****\n\n");
+
 
 }
 
@@ -158,80 +160,78 @@ static void run_ith(Deq q,int ht, int r, int index){
     printf("An invalid option was entered for r \n");
     return ; 
   }
-   
+  printf("*****Test complete*****\n");
  
 }
 
+/**
+ * run_test - test put get 
+ * t - test to run ( 1 = head put, 2 - tail put, 3 = tail put/get head, 
+ *    4 - tail put/get tail )
+*/
 
-// //static void run_test(Deq q, int ht){
+static void run_test(Deq q, int t){
   
-//   char *t1 = "test1 ";
-//   char *t2 = "test2 ";
-//   char *t3 = "test3 "; 
-//   char *t4 = "test4 ";
-//   char *t5 = "test5 ";
-//   char *t6 = "test6 ";
-//   char *t7 = "test7 "; 
+  char *t1 = "test1 ";
+  char *t2 = "test2 ";
+  char *t3 = "test3 "; 
+  char *t4 = "test4 ";
+  char *t5 = "test5 ";
+  char *t6 = "test6 ";
+  char *t7 = "test7 "; 
 
-//   if (ht == 1){
-//     printf("*****PUT H *****\n");
-//     deq_head_put(q, t1);
-//     deq_head_put(q, t2);
-//     deq_head_put(q, t3); 
-//     deq_head_put(q, t4);
-//     deq_head_put(q, t5);
-//     deq_head_put(q, t6);
-//     deq_head_put(q, t7);
-//   }
-//   else if (ht == 2){
+  if (t == 1){
+    printf("*****PUT H *****\n");
+    deq_head_put(q, t1);
+    deq_head_put(q, t2);
+    deq_head_put(q, t3); 
+    deq_head_put(q, t4);
+    deq_head_put(q, t5);
+    deq_head_put(q, t6);
+    deq_head_put(q, t7);
+  }
+  else if (t == 2){
     
-//    printf("*****PUT T *****\n");
-//     deq_tail_put(q, t1);
-//     deq_tail_put(q, t2);
-//     deq_tail_put(q, t3); 
-//     deq_tail_put(q, t4);
-//     deq_tail_put(q, t5);
-//     deq_tail_put(q, t6);
-//     deq_tail_put(q, t7);
+   printf("*****PUT T *****\n");
+    deq_tail_put(q, t1);
+    deq_tail_put(q, t2);
+    deq_tail_put(q, t3); 
+    deq_tail_put(q, t4);
+    deq_tail_put(q, t5);
+    deq_tail_put(q, t6);
+    deq_tail_put(q, t7);
 
-//   }
-//   else if (ht == 3){
-//     //insert nodes 
-//     deq_tail_put(q, t1);
-//     deq_tail_put(q, t2);
-//     deq_tail_put(q, t3); 
-//     deq_tail_put(q, t4);
-//     deq_tail_put(q, t5);
-//     deq_tail_put(q, t6);
-//     deq_tail_put(q, t7);
+  }
+  else if (t == 3){
+    //insert nodes 
+    deq_tail_put(q, t1);
+    deq_tail_put(q, t2);
+    deq_tail_put(q, t3); 
+    deq_tail_put(q, t4);
+    deq_tail_put(q, t5);
+    deq_tail_put(q, t6);
+    deq_tail_put(q, t7);
 
-//    deq_head_get(q); 
-//   }
-//   else if (ht == 4){
-//     //insert nodes 
-//     deq_tail_put(q, t1);
-//     deq_tail_put(q, t2);
-//     deq_tail_put(q, t3); 
-//     deq_tail_put(q, t4);
-//     deq_tail_put(q, t5);
-//     deq_tail_put(q, t6);
-//     deq_tail_put(q, t7);
+   deq_head_get(q); 
+  }
+  else if (t == 4){
+    //insert nodes 
+    deq_tail_put(q, t1);
+    deq_tail_put(q, t2);
+    deq_tail_put(q, t3); 
+    deq_tail_put(q, t4);
+    deq_tail_put(q, t5);
+    deq_tail_put(q, t6);
+    deq_tail_put(q, t7);
 
-//     deq_tail_get(q);
-//   }
-//   else{
-//     printf("Incorrect input, enter 1 to run head_put, enter 2 to run tail_put");
-//   }
-// }
-
-
+    deq_tail_get(q);
+  }
+  else{
+    printf("Incorrect input, enter 1 to run head_put, enter 2 to run tail_put");
+  }
+}
 
 
-// static void run_test(Deq q, int putH, int putT){
-//   run_he_put(q); 
-
-  
-// }
 
 
 
@@ -239,8 +239,8 @@ static void run_ith(Deq q,int ht, int r, int index){
 int main() {
   Deq q=deq_new();
 
-  // run_test(q,5);
-  //run_ith(q,0, 0, 2);
+  run_test(q,5);
+  run_ith(q,0, 0, 2);
   run_rem(q,0,1);
   run_rem(q,1,0);
 
