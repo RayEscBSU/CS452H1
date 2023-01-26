@@ -23,6 +23,7 @@ Teting - test are built in to main.c
 
  How to perform test - user runs test to be performed in main.c. 
 
+
 Run 
        GNUmakefile must be in the parent directory 
        To run: 
@@ -30,11 +31,8 @@ Run
                                                         -./deq
 
        To run valgrind: 
-       From directory where main.c is located    - make valgrind
-                                                 
+       From directory where main.c is located    - make valgrind                                         
 
-
-       
 
 DESCRIPTION
        Our assingment was to implement a double ended doubly linked list. Doulbe ended means the list can have
@@ -46,47 +44,61 @@ DESCRIPTION
               - Get - Returns the data from the last node
               - Rem - removes the node with matching data then removes node
 
-       This is a test script for man page template. Place brief description here.
 
-OBJECT
-       --a1|-arg1 <arg1_value>
-              Provide arg1_value. Must be integer. Provide more hint for the user related to arg1_value
+Results 
+      Testing results 
+       PUT
+       deq_head_put
+              PUT HEAD:
+                     test7  test6  test5  test4  test3  test2  test1 
+       deq_tail_put
+              PUT TAIL:
+                     test1  test2  test3  test4  test5  test6  test7
+       deq_head_ith
 
-       --a2|-arg2  <arg2_value>
-              Provide arg2_value. Must be integer. Provide more hint for the user related to arg2_value
+       GET
+       deq_head_get
+              -Put from head get from head
+                     PUT HEAD:
+                            test7  test6  test5  test4  test3  test2  test1 
+                     GET Head:
+                            test7 
+                     NEW LIST:
+                            test6  test5  test4  test3  test2  test1 
+              
+              -Put from tail get from head
+                     PUT TAIL:
+                           test1  test2  test3  test4  test5  test6  test7 
+                     GET Head:
+                           test1 
+                     NEW LIST:
+                         test2  test3  test4  test5  test6  test7 
+       
+       deq_tail_get
+              -Put from head get from tail
+                     PUT HEAD:
+                           test7  test6  test5  test4  test3  test2  test1 
+                     GET Tail:
+                          test1 
+                     NEW LIST:
+                            test7  test6  test5  test4  test3  test2
 
-       --a3|-arg3 value1,value2,value3,..
+              -Put from tail get from tail
+                     PUT TAIL:
+                            test1  test2  test3  test4  test5  test6  test7 
+                     GET Tail:
+                          test7 
+                     NEW LIST:
+                          test1  test2  test3  test4  test5  test6       
+       iTH
 
-       Different man page examples formats
-
-       Display in normal format with regular TAB using .RS and TAB value of 1.2i
-
-                   TEAM1 - team1_value1, team1_value2
-
-                   TEAM2 - team2_value1, team2_value2
-
-       Display content in Table Format. Floating in Left
-
-                   ┌──────┬────────────────────────────┐
-                   │TEAM  │           Value            │
-                   ├──────┼────────────────────────────┤
-                   │TEAM1 │ team1_value1, team1_value2 │
-                   │TEAM2 │ team2_value1, team2_value2 │
-                   │TEAM3 │ team3_value1, team3_value2 │
-                   │TEAM4 │ team4_value1, team4_value2 │
-                   └──────┴────────────────────────────┘
-
-       Display content in a Tabular format
-
-                   TEAM              Value                  Comment
-                   ─────────────────────────────────────────────────────
-
-                   TEAM1   team1_value1, team1_value2   Value for team1
-                   TEAM2   team2_value1, team2_value2   Value for team2
-                   TEAM3   team3_value1, team3_value2   Value for team3
-                   TEAM4   team4_value1, team4_value2   Value for team4
-
-              Multiple values can be added within inverted commas separated by comma for different teams
+       REM 
+              PUT HEAD:
+                     test7  test6  test5  test4  test3  test2  test1 
+              REM Tail:
+                     test3 
+              NEW LIST:
+              test7  test6  test5  test4  test2  test1 
 
 FILES
        GNUmakefile
@@ -98,16 +110,17 @@ FILES
               error.h
               manRE.1s
 
-EXAMPLES
-       deq_head_get
-       deq_head_ith
-       deq_head_put - deq_head_put(q,"char_test")
-       deq_head_rem
 
-       deq_tail_get
-       deq_tail_ith
+EXAMPLES
+       deq_head_get - deq_head_get(q)
+       deq_head_ith - deq_head_ith(q,"index_to_remove")
+       deq_head_put - deq_head_put(q,"char_test")
+       deq_head_rem - deq_head_rem(q)
+
+       deq_tail_get - deq_tail_get(q)
+       deq_tail_ith - deq_tail_ith(q,"index_to_remove")
        deq_tail_put - deq_tail_put(q,"char_test")
-       deq_tail_rem
+       deq_tail_rem - deq_head_rem(q)
 
 
 CREDITS
