@@ -32,12 +32,12 @@ static Rep rep(Deq q) {
 static void put(Rep r, End e, Data d) {
     struct Node *newN = (struct Node*) malloc(sizeof (struct Node) + sizeof(d));
     newN -> data = d;
-    int h = Head; 
-    int t = Tail; 
+    int h = Tail; 
+    int t = Head; 
 
     if(e == Tail){ //put starting at tail, revers H and T values
-      h  = Tail; 
-      t = Head; 
+      h  = Head; 
+      t = Tail; 
     }
 
     if ( r->len == 0){  // if list is empty
@@ -55,7 +55,7 @@ static void put(Rep r, End e, Data d) {
       r->ht[t] = newN;  
     }
 
-    r->len = +1;
+    r->len += 1;
     return ;
 }
 
@@ -81,7 +81,7 @@ static Data ith(Rep r, End e, int i)  {
   if(e == Tail){ //put starting at tail, revers H and T values
     h  = Tail; 
     t = Head; 
-    c = r->len +1; 
+    c = r->len; 
   }
 
   struct Node *temp = r->ht[h]; 
@@ -140,7 +140,7 @@ static Data get(Rep r, End e)         {
 
 /**
  * Rem - removes the node with matching data then removes node 
- * Returns - mathcing data 
+ * Returns - mathcing data from list
  * 
 */
 static Data rem(Rep r, End e, Data d) {
