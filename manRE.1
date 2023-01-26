@@ -44,6 +44,29 @@ DESCRIPTION
               - Get - Returns the data from the last node
               - Rem - removes the node with matching data then returns the data
 
+FILES
+       GNUmakefile
+       CS452H1
+              libdeq.so
+              deq.c
+              main.c
+              deq.h
+              error.h
+              manRE.1s
+
+
+EXAMPLES
+       deq_head_get - deq_head_get(q)
+       deq_head_ith - deq_head_ith(q,"index_to_remove")
+       deq_head_put - deq_head_put(q,"char_test")
+       deq_head_rem - deq_head_rem(q)
+
+       deq_tail_get - deq_tail_get(q)
+       deq_tail_ith - deq_tail_ith(q,"index_to_remove")
+       deq_tail_put - deq_tail_put(q,"char_test")
+       deq_tail_rem - deq_head_rem(q)
+
+
 
 Results 
       Testing results 
@@ -138,29 +161,6 @@ Results
                             test2 
                      NEW LIST:
                             test1  test3  test4  test5  test6  test7
-
-FILES
-       GNUmakefile
-       CS452H1
-              libdeq.so
-              deq.c
-              main.c
-              deq.h
-              error.h
-              manRE.1s
-
-
-EXAMPLES
-       deq_head_get - deq_head_get(q)
-       deq_head_ith - deq_head_ith(q,"index_to_remove")
-       deq_head_put - deq_head_put(q,"char_test")
-       deq_head_rem - deq_head_rem(q)
-
-       deq_tail_get - deq_tail_get(q)
-       deq_tail_ith - deq_tail_ith(q,"index_to_remove")
-       deq_tail_put - deq_tail_put(q,"char_test")
-       deq_tail_rem - deq_head_rem(q)
-
 
 CREDITS
        Author:       Raymundo Escobedo 
