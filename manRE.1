@@ -1,6 +1,6 @@
 # man deq
                                                                                             
-teting - test are built in to main.c
+Teting - test are built in to main.c
 
        Test for put and get. Checks functionality of deq_head_put/ deq_tail_put and deq_head_get/ deq_tail_get functionality
        run_put_get
@@ -23,17 +23,24 @@ teting - test are built in to main.c
 
  How to perform test - user runs test to be performed in main.c. 
 
-SYNOPSIS
-       test_script {OBJECT} [OPTIONS]
+Run 
+       GNUmakefile must be in the parent directory 
+       To run: 
+              from directory where main.c is located    - make
+                                                        -./deq
+
+
+       
 
 DESCRIPTION
-       test_script  Write detailed description of the tool here. This script can perform all these tasks and must be executed
-       as root user. More information on the tasks performed is explained below:
+       Our assingment was to implement a double ended doubly linked list. Doulbe ended means the list can have
+       the head or tail at iether end of the list. Double linked means each node has a pointer for its head and
+       tail nodes. Valgrind was used to manage memory. 
 
-              - Performs task 1
-              - Performs task 2
-              - Performs task 3
-              - Performs task 4
+              - Put - adds a node to the end of the list
+              - ith - returns data at a specified index depnding on direction
+              - Get - Returns the data from the last node
+              - Rem - removes the node with matching data then removes node
 
        This is a test script for man page template. Place brief description here.
 
@@ -85,9 +92,15 @@ OPTIONS
               Prints help
 
 FILES
-       /etc/test_script.conf
+       GNUmakefile
+       CS452H1
+              libdeq.so
+              deq.c
+              main.c
+              deq.h
+              error.h
+              manRE.1s
 
-       /usr/bin/test_script
 
 EXAMPLES
        test_script --arg1 my_arg1 --arg4 'team1_value1,team2_value1'
@@ -98,25 +111,10 @@ EXAMPLES
 
               Run test_script with my_arg2 value for team2 value
 
-DIAGNOSTICS
-       The activity performed using this utility is logged in the file /var/log/test_script
-
-EXIT STATUS
-       0      Success
-
-       1      Success but reboot required
-
-       2      Success but no reboot required
-
-SEE ALSO
-       test_script1(1), test_script2(1), test_script3 (1)
-
-COPYRIGHT
-       Copyright 2019 GoLinuxCloud. All rights reserved https://www.golinuxcloud.com
 
 CREDITS
-       This man page is created only for demonstration purpose by Deepak Prasad <admin@golinuxcloud.com>
-
-       GoLinuxCloud test_script(1)
+       Author:       Raymundo Escobedo 
+       Date:         Spring 2023
+       Class:        CS 452
                                                                                                              test_script(1)()
 
