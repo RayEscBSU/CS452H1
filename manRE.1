@@ -42,7 +42,7 @@ DESCRIPTION
               - Put - adds a node to the end of the list
               - ith - returns data at a specified index depnding on direction
               - Get - Returns the data from the last node
-              - Rem - removes the node with matching data then removes node
+              - Rem - removes the node with matching data then returns the data
 
 
 Results 
@@ -91,14 +91,53 @@ Results
                      NEW LIST:
                           test1  test2  test3  test4  test5  test6       
        iTH
+              -ith from head
+                     PUT HEAD:
+                            test7  test6  test5  test4  test3  test2  test1 
+                     Index to return: 3 
+                     iTH Head:
+                             test4 
 
-       REM 
-              PUT HEAD:
-                     test7  test6  test5  test4  test3  test2  test1 
-              REM Tail:
-                     test3 
-              NEW LIST:
-              test7  test6  test5  test4  test2  test1 
+              -ith from tail
+                     PUT HEAD:
+                            test7  test6  test5  test4  test3  test2  test1 
+                     Index to return: 3 
+                     iTH Tail:
+                            test4 
+
+
+       REM    
+              -Put from head REM from head
+                     PUT HEAD:
+                            test7  test6  test5  test4  test3  test2  test1 
+                     REM Head:
+                            test2 
+                     NEW LIST:
+                            test7  test6  test5  test4  test3  test1 
+
+              -Put from head REM from tail
+                     PUT HEAD:
+                            test7  test6  test5  test4  test3  test2  test1 
+                     REM Tail:
+                            test3 
+                     NEW LIST:
+                            test7  test6  test5  test4  test2  test1 
+
+              -Put from tail REM from head
+                     PUT TAIL:
+                            test1  test2  test3  test4  test5  test6  test7 
+                     REM Head:
+                            test2 
+                     NEW LIST:
+                            test1  test3  test4  test5  test6  test7 
+
+              -Put from tail REM from tail
+                     PUT TAIL:
+                            test1  test2  test3  test4  test5  test6  test7 
+                     REM Head:
+                            test2 
+                     NEW LIST:
+                            test1  test3  test4  test5  test6  test7
 
 FILES
        GNUmakefile
